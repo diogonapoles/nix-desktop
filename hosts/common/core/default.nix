@@ -9,5 +9,6 @@
     ./security.nix
     ./zsh.nix
     ./dconf.nix
+    ./swappiness.nix
   ];
 }

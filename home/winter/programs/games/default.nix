@@ -10,7 +10,6 @@
     bbe
     heroic
     gamescope
-    gamemode
     lutris
     dualsensectl
   ];
