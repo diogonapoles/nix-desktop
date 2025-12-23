@@ -10,7 +10,7 @@
   };
 
   hardware.nvidia = {
-    package = config.boot.kernelPackages.nvidiaPackages.stable;
+    package = config.boot.kernelPackages.nvidiaPackages.beta;
     open = true;
     nvidiaSettings = true;
     modesetting.enable = true;
@@ -23,7 +23,7 @@
 
   environment.variables = {
     __GL_SHADER_DISK_CACHE_SIZE = "12000000000";
-    NVPRESENT_ENABLE_SMOOTH_MOTION = "1"; 
+    # NVPRESENT_ENABLE_SMOOTH_MOTION = "1"; # DLSS4
     PROTON_ENABLE_NVAPI = "1";  
   };
 
