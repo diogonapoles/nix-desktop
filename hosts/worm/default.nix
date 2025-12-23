@@ -16,8 +16,9 @@
 
     ../common/optional/tuigreet.nix
     ../common/optional/pipewire.nix
-    ../common/optional/boot-systemd.nix
+    ../common/optional/boot.nix
     ../common/optional/networkmanager.nix
+    ../common/optional/bluetooth.nix
     ../common/optional/locale-pt-PT.nix
     ../common/optional/keyboard-us.nix
     ../common/optional/base-packages.nix
