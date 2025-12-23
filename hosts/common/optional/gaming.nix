@@ -19,10 +19,16 @@
     # steam: gamemoderun %command% 
     gamemode = {
       enable = true;
+      enableRenice = true;
       settings = {
         general = {
           softrealtime = "auto";
           renice = 10;
+        };
+
+        cpu = {
+          park_cores = "no";
+          pin_cores = "no";
         };
 
         gpu = {

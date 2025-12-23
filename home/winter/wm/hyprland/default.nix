@@ -252,6 +252,12 @@
         "size 460 800, class:steam, title:Friends List"
         "idleinhibit fullscreen, class:steam"
 
+        "immediate, class:^(steam_app).*"
+        "immediate, class:^(gamescope).*"
+        "noborder, fullscreen:1"  
+        "noblur, fullscreen:1"  
+        "noshadow, fullscreen:1" 
+
         "suppressevent maximize, class:.*"
         "nofocus,class:^$,title:^$,xwayland:1,floating:1,fullscreen:0,pinned:0"
 

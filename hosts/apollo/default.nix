@@ -24,7 +24,6 @@
     ../common/optional/base-packages.nix
     ../common/optional/containers.nix
 
-    ../common/optional/gamemode.nix
     ../common/optional/gaming.nix
   ];
 
