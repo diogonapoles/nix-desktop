@@ -3,6 +3,5 @@
     ./firefox
     ./obsidian
     ./zathura
-    ./intellij-idea
   ];
 }
