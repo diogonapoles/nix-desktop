@@ -42,8 +42,8 @@
         };
 
         nixosConfigurations = {
-            worm = lib.nixosSystem {
-                modules = [./hosts/worm];
+            apollo = lib.nixosSystem {
+                modules = [./hosts/apollo];
                 specialArgs = {
                     inherit inputs outputs;
                 };

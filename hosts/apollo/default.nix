@@ -9,7 +9,7 @@
     inputs.hardware.nixosModules.common-pc-ssd
 
     ./hardware-configuration.nix
-    ./nvidia.nix
+    ../common/optional/nvidia.nix
 
     ../common/core
     ../common/users/winter
@@ -25,12 +25,11 @@
     ../common/optional/containers.nix
 
     ../common/optional/gamemode.nix
-    ../common/optional/steam.nix
-    # ../common/optional/steam-gamescope-session.nix
+    ../common/optional/gaming.nix
   ];
 
   networking = {
-    hostName = "worm";
+    hostName = "apollo";
   };
 
   system.stateVersion = "25.11";

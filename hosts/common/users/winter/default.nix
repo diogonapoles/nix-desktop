@@ -21,7 +21,7 @@ in {
     packages = [pkgs.home-manager];
   };
 
-  home-manager.users.winter = ../../../../home/winter/worm.nix;
+  home-manager.users.winter = ../../../../home/winter/apollo.nix;
 
   security.pam.services = {
     hyprlock = {};

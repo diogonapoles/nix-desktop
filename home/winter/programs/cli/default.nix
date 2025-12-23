@@ -6,6 +6,8 @@
     ./fastfetch
     ./yazi
     ./lazydocker
-    ./direnv
+    ./claude-code
+    ./nh
+    ./git
   ];
 }

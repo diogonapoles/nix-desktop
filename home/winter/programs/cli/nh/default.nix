@@ -6,7 +6,7 @@
   programs.nh = {
     enable = true;
 
-    flake = "/home/${config.home.username}/nix";
+    flake = "/home/${config.home.username}/nixos";
 
     clean = {
       enable = true;

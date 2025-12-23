@@ -9,7 +9,7 @@
     # =========================================================================
 
     # Path to NixOS flake configuration directory
-    NH_FLAKE = "/home/${config.home.username}/nix";
+    NH_FLAKE = "/home/${config.home.username}/nixos";
 
     # =========================================================================
     # NVIDIA GPU Configuration
