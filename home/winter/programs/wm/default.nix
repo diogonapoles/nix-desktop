@@ -4,5 +4,6 @@
     ./hyprlock
     ./rofi
     ./swayidle
+    ./swayosd
   ];
 }

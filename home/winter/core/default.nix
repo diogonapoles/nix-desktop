@@ -6,9 +6,7 @@
   outputs,
   ...
 }: {
-  imports = [
-    ./environment.nix
-  ] ++ (builtins.attrValues outputs.homeManagerModules);
+  imports = [ ] ++ (builtins.attrValues outputs.homeManagerModules);
 
   programs = {
     home-manager.enable = true;

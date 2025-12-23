@@ -26,6 +26,10 @@
         force_zero_scaling = true;
       };
 
+      ecosystem = {
+        no_update_news = true;
+      };
+
       general = {
         gaps_in = 2;
         gaps_out = 7;
@@ -241,6 +245,13 @@
         "size 30% 40%, $center-float-mini"
         "center 1, $center-float-mini"
 
+        "float, class:steam"
+        "center, class:steam, title:Steam"
+        "opacity 1 1, class:steam"
+        "size 1100 700, class:steam, title:Steam"
+        "size 460 800, class:steam, title:Friends List"
+        "idleinhibit fullscreen, class:steam"
+
         "suppressevent maximize, class:.*"
         "nofocus,class:^$,title:^$,xwayland:1,floating:1,fullscreen:0,pinned:0"
 
@@ -259,7 +270,7 @@
       ];
 
       "exec-once" = [
-        "swaybg -i ~/nix/assets/current/current.png -m fill"
+        "swaybg -i ~/nixos/assets/current/current.png -m fill"
         "waybar"
         # "uwsm-app -- swaync"
         # "uwsm-app -- wl-paste --watch cliphist store"
