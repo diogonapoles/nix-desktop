@@ -34,13 +34,6 @@
         inherit lib;
         homeManagerModules = import ./modules/home-manager;
 
-        templates = {
-            go = {
-                path = ./templates/go;
-                description = "Basic Go development environment with direnv";
-            };
-        };
-
         nixosConfigurations = {
             apollo = lib.nixosSystem {
                 modules = [./hosts/apollo];
