@@ -263,6 +263,13 @@
 
         "workspace 2, class:firefox"
         "workspace 3, class:discord"
+
+        "tag +games, class:^(gamescope)$"
+        "tag +games, class:^(steam_app_\d+)$"
+        "tag +gamestore, class:^([Ss]team)$"
+        "tag +gamestore, title:^([Ll]utris)$"
+        "tag +gamestore, class:^(com.heroicgameslauncher.hgl)$"
+        "noblur, tag:games*"
       ];
 
       # Layer rules
