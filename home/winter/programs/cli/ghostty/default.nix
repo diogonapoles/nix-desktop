@@ -5,7 +5,7 @@
   programs.ghostty = {
     enable = true;
     settings = {
-      theme = "Gruvbox Dark";
+      theme = "Nord";
       
       font-family = "FiraCode Nerd Font Mono";
       font-style = "Regular";

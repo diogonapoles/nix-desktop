@@ -13,16 +13,18 @@
 
 /* The whole bar */
 window#waybar {
-  background: #282828; 
-  color: #ebdbb2; 
+  background: #2e3440; 
+  color: #eceff4; 
   transition-property: background-color;
   transition-duration: 0.5s;
   margin: 2px 5px 0 5px;
   margin-bottom: 8px;
 }
 
-#image {
-  margin-left: 5px;
+#custom-nix {
+  padding: 0px 8px;
+  font-size: 18px;
+  background-color: transparent;
 }
 
 /* Each module */
@@ -45,25 +47,20 @@ window#waybar {
 }
 
 #clock { 
-  color: #282828;
-  background-color: #83a598;
+  background-color: #4c566a;
 }
 
 #pulseaudio { 
-  background-color: #3c3836; 
+  background-color: #4c566a; 
 }
 #network { 
-  background-color: #504945; 
+  background-color: #4c566a; 
 }
 #cpu { 
-  background-color: #665c54; 
+  background-color: #4c566a; 
 }
 #memory { 
-  background-color: #7c6f64; 
-}
-#battery { 
-  color: #282828;
-  background-color: #fabd2f;
+  background-color: #4c566a; 
 }
 
 /* Battery animation preserved */
@@ -86,20 +83,19 @@ window#waybar {
     padding: 0 5px;
     /* margin: 2.5 2px; */
     background-color: transparent;
-    color: #ebdbb2;
+    color: #eceff4;
     font-family: "Noto Sans JP", "JetBrainsMono Nerd Font";
 }
 
 #workspaces button:hover {
-    background: #3c3836;
+    background: #434c5e;
 }
 
 #workspaces button.active {
-    color: #282828;
-    background-color: #98971a;
+    background-color: #4c566a;
 }
 
 #workspaces button.urgent {
-    background-color: #cc241d;
+    background-color: #bf616a;
 }
 

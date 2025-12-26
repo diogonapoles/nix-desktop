@@ -34,8 +34,8 @@
         gaps_in = 2;
         gaps_out = 7;
         border_size = 2;
-        "col.active_border" = "rgba(d5c4a1ff)";  # Gruvbox light cream
-        "col.inactive_border" = "rgba(928374ff)";  # Gruvbox medium brown
+        "col.active_border" = "rgba(81a1c1ff)";  # Gruvbox light cream
+        "col.inactive_border" = "rgba(3b4252ff)";  # Gruvbox medium brown
         resize_on_border = false;
         no_border_on_floating = false;
         allow_tearing = true;

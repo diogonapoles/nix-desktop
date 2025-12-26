@@ -6,8 +6,8 @@
     enable = true;
 
     settings = {
-      color_theme = "gruvbox_dark";
-      theme_background = false;
+      color_theme = "nord";
+      theme_background = true;
     };
   };
 }

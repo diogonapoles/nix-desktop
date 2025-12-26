@@ -9,7 +9,7 @@ in
 
     wallpaper = lib.mkOption {
       type = lib.types.str;
-      default = "${homeDir}/nixos/assets/current/current.png";
+      default = "${homeDir}/nixos/assets/anime-scarf.jpeg";
       description = "Path to wallpaper image";
     };
 

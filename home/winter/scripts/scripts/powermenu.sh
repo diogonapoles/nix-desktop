@@ -1,10 +1,10 @@
 #! /usr/bin/env bash
 
-orange='#d65d0e'
-green='#98971a'
-blue='#83a598'
-yellow='#fabd2f'
-gray='#7c6f64'
+orange='#d08770'
+green='#a3be8c'
+blue='#8fbcbb'
+yellow='#ebcb8b'
+gray='#d8dee9'
 
 shutdown="<span color='${orange}'>󰐥</span>"
 reboot="<span color='${green}'>󰜉</span>"

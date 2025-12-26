@@ -25,7 +25,7 @@
         spacing = 5;
 
         modules-left = [
-          "image"
+          "custom/nix"
           "hyprland/workspaces"
           "hyprland/window"
         ];
@@ -43,11 +43,10 @@
           "battery"
         ];
 
-        image = {
-          path = ./nix.svg;
-          size = 20;
-          interval = 5;
-          on-click = "powermenu";
+        "custom/nix" = {
+            format = "󱄅";
+            tooltip = false;
+            on-click = "powermenu";
         };
 
         clock = {

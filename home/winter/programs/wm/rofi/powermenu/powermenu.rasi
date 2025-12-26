@@ -25,7 +25,7 @@ mainbox {
     
     border:                      0px solid;
     border-radius:               0px;
-    border-color:                @selected-col;
+    border-color:                @border-col;
     
     background-color:            inherit;
 
