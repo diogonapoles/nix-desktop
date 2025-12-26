@@ -3,14 +3,15 @@
 
     inputs = {
         nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-        systems.url = "github:nix-systems/default-linux";
-
-        hardware.url = "github:nixos/nixos-hardware";
 
         home-manager = {
             url = "github:nix-community/home-manager";
             inputs.nixpkgs.follows = "nixpkgs";
         };
+
+        systems.url = "github:nix-systems/default-linux";
+
+        hardware.url = "github:nixos/nixos-hardware";
     };
 
     outputs = { 
@@ -31,7 +32,19 @@
                 }
         );
     in {
-        inherit lib;
+        # Merge nixpkgs lib, home-manager lib, and custom lib
+        lib = lib // (import ./lib { inherit inputs; });
+
+        # Export custom packages
+        packages = forEachSystem (pkgs: import ./pkgs { inherit pkgs; });
+
+        # Export overlays
+        overlays = import ./overlays { inherit inputs; };
+
+        # Export NixOS modules
+        nixosModules.default = import ./modules/nixos;
+
+        # Export home-manager modules
         homeManagerModules = import ./modules/home-manager;
 
         nixosConfigurations = {

@@ -12,7 +12,7 @@
       background = [
         {
           monitor = "";
-          path = "${config.home.homeDirectory}/nixos/assets/forest-5.jpg";
+          path = config.theme.assets.lockscreen;
           blur_size = 4;
           blur_passes = 2;
           noise = 0.02;
@@ -26,7 +26,7 @@
       image = [
         {
           monitor = "";
-          path = "${config.home.homeDirectory}/nixos/assets/profile/logonord.png";
+          path = config.theme.assets.profileImage;
           size = 300;
           position = "0, 10%";
           halign = "center";

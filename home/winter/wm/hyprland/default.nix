@@ -276,14 +276,14 @@
       ];
 
       "exec-once" = [
-        "swaybg -i ~/nixos/assets/current/current.png -m fill"
+        "swaybg -i ${config.theme.assets.wallpaper} -m fill"
         "waybar"
         # "uwsm-app -- swaync"
         # "uwsm-app -- wl-paste --watch cliphist store"
       ];
 
       monitor = [
-        "DP-3, highres@highrr, auto, 1.5, bitdepth,10"
+        "${config.monitors.primary}, ${config.monitors.hyprlandConfig}"
       ];
     };
   };

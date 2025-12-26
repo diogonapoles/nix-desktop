@@ -9,23 +9,28 @@
     inputs.hardware.nixosModules.common-pc-ssd
 
     ./hardware-configuration.nix
-    ../common/optional/nvidia.nix
-
-    ../common/core
+    ../common/global
     ../common/users/winter
-
-    ../common/optional/tuigreet.nix
-    ../common/optional/pipewire.nix
-    ../common/optional/boot.nix
-    ../common/optional/networkmanager.nix
-    ../common/optional/bluetooth.nix
-    ../common/optional/locale-pt-PT.nix
-    ../common/optional/keyboard-us.nix
-    ../common/optional/base-packages.nix
-    ../common/optional/containers.nix
-
-    ../common/optional/gaming.nix
   ];
+
+  # Enable hardware modules
+  hardware.nvidia-custom.enable = true;
+  hardware.bluetooth-custom.enable = true;
+
+  # Enable service modules
+  services.pipewire-custom.enable = true;
+  services.tuigreet-custom.enable = true;
+
+  # Enable system modules
+  system.boot-custom.enable = true;
+  system.networking-custom.enable = true;
+  system.locale-custom.enable = true;
+  system.keyboard-custom.enable = true;
+  system.containers-custom.enable = true;
+  system.base-packages.enable = true;
+
+  # Enable gaming
+  gaming.steam-custom.enable = true;
 
   networking = {
     hostName = "apollo";
