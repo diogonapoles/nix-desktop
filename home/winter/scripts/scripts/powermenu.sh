@@ -12,7 +12,7 @@ lock="<span color='${blue}'></span>"
 suspend="<span color='${yellow}'>󰤄</span>"
 logout="<span color='${gray}'>󰗽</span>"
 
-theme="$HOME/.config/rofi/themes/powermenu/powermenu.rasi"
+theme="$HOME/.config/rofi/powermenu/powermenu.rasi"
 
 rofi_cmd() {
   rofi -dmenu -theme ${theme} -markup-rows

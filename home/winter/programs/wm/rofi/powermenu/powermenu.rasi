@@ -2,11 +2,11 @@
 
 configuration {
     show-icons: false;
-    font: "Font Awesome 7 Free 30";
+    font: "JetBrainsMono Nerd Font Mono 35";
 }
 
 window {
-    width:                       400;
+    width:                       500;
     location:                    center;
     anchor:                      center;
 
@@ -36,7 +36,7 @@ listview {
     enabled:                     true;
 
     lines:                       1;
-    columns:                     4;
+    columns:                     5;
     
     cycle:                       true;
     dynamic:                     true;
@@ -60,7 +60,7 @@ element {
     enabled:                     true;
     
     spacing:                     0px;
-    padding:                     28px 0px;
+    padding:                     20px 0px;
     
     border:                      inherit;
     border-radius:               inherit;
