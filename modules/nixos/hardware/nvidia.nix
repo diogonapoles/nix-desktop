@@ -61,10 +61,12 @@ in
     systemd.services.nvidia-hibernate.enable = true;
 
     services.sunshine.settings = {
-      max_bitrate = 20000; # in Kbps
-      # NVIDIA NVENC Encoder
-      nvenc_preset = 3; # 1(fastest + worst quality) - 7(slowest + best quality)
-      nvenc_twopass = "full_res"; # quarter_res / full_res.
-    };
+      upnp = true;
+
+      encoder = "nvenc";
+
+      nvenc_preset = 1;  # P1 preset (Performance)
+      nvenc_twopass = "quarter_res";  # Quarter resolution two-pass
+    };  
   };
 }
