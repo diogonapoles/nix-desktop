@@ -28,6 +28,7 @@
   system.keyboard-custom.enable = true;
   system.containers-custom.enable = true;
   system.base-packages.enable = true;
+  system.remote-desktop-custom.enable = true;
 
   # Enable gaming
   gaming.steam-custom.enable = true;

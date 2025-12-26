@@ -17,5 +17,6 @@
     ./keyboard.nix
     ./containers.nix
     ./base-packages.nix
+    ./remote-desktop.nix
   ];
 }

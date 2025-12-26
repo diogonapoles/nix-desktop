@@ -21,9 +21,8 @@ window#waybar {
   margin-bottom: 8px;
 }
 
-#custom-arch {
-  padding: 1px 8px;
-  background-color: transparent;
+#image {
+  margin-left: 5px;
 }
 
 /* Each module */

@@ -32,19 +32,12 @@
                 }
         );
     in {
-        # Merge nixpkgs lib, home-manager lib, and custom lib
         lib = lib // (import ./lib { inherit inputs; });
-
-        # Export custom packages
         packages = forEachSystem (pkgs: import ./pkgs { inherit pkgs; });
-
-        # Export overlays
         overlays = import ./overlays { inherit inputs; };
 
-        # Export NixOS modules
         nixosModules.default = import ./modules/nixos;
 
-        # Export home-manager modules
         homeManagerModules = import ./modules/home-manager;
 
         nixosConfigurations = {
