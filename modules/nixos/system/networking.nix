@@ -24,6 +24,25 @@ in
       ];
     };
 
-    networking.networkmanager.enable = true;
+    networking.networkmanager = {
+      enable = true;
+      wifi.backend = "iwd";
+    };
+
+    networking.wireless.iwd = {
+      enable = true;
+      settings = {
+        General = {
+          EnableNetworkConfiguration = false;  # let networkmanager handle this
+        };
+        Network = {
+          EnableIPv6 = true;
+          RoutePriorityOffset = 300;
+        };
+        Settings = {
+          AutoConnect = true;
+        };
+      };
+    };
   };
 }

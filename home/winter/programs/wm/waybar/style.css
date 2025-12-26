@@ -21,8 +21,8 @@ window#waybar {
   margin-bottom: 8px;
 }
 
-#image {
-  margin-left: 5px;
+#custom-arch {
+  padding: 1px 8px;
   background-color: transparent;
 }
 

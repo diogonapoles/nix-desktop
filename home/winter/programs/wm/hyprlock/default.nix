@@ -98,12 +98,6 @@
           fade_on_empty = false;
         }
       ];
-
-      auth = {
-        fingerprint = {
-          enabled = true;
-        };
-      };
     };
   };
 }

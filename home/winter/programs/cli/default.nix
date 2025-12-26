@@ -9,5 +9,6 @@
     ./claude-code
     ./nh
     ./git
+    ./impala
   ];
 }

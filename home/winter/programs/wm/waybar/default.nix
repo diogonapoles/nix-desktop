@@ -1,7 +1,7 @@
-{ 
-  pkgs, 
+{
+  pkgs,
   lib,
-  ... 
+  ...
 }: {
   systemd.user.services.waybar = {
     Unit = {
@@ -23,18 +23,19 @@
         margin-right = 8;
         height = 23;
         spacing = 5;
-        
+
         modules-left = [
           "image"
           "hyprland/workspaces"
           "hyprland/window"
         ];
-        
+
         modules-center = [
           "clock"
         ];
-        
+
         modules-right = [
+          "tray"
           "pulseaudio"
           "network"
           "cpu"
@@ -48,36 +49,36 @@
           interval = 5;
           on-click = "powermenu";
         };
-        
+
         clock = {
           format = "{:%I:%M %p - %B %d, %Y}";
           tooltip-format = "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>";
           format-alt = "{:%Y-%m-%d}";
         };
-        
+
         cpu = {
           format = " {usage}%";
           on-click = "hyprctl dispatch exec '[float; size 1000 800; move center] ghostty -e btop'";
         };
-        
+
         memory = {
           format = " {}%";
           on-click = "hyprctl dispatch exec '[float; size 1000 800; move center] ghostty -e btop'";
         };
-        
+
         "hyprland/window" = {
           max-length = 30;
         };
-        
+
         "hyprland/language" = {
           format-en = "En";
         };
-        
+
         tray = {
           icon-size = 20;
           spacing = 8;
         };
-        
+
         pulseaudio = {
           format = "{icon} {volume}%";
           format-bluetooth = "{icon} {volume}%";
@@ -94,7 +95,7 @@
           };
           on-click = "hyprctl dispatch exec '[float; size 600 700; move center] ghostty -e wiremix --tab output'";
         };
-        
+
         bluetooth = {
           format = "";
           format-disabled = "";
@@ -103,16 +104,20 @@
           format-connected = "󰂱 {device_alias}";
           max-length = 16;
         };
-        
+
         network = {
           format = "{ifname}";
-          format-wifi = "󰖩 {essid}";
-          format-ethernet = "󰈀 {ipaddr}";
-          format-disconnected = "Disconnected";
+          format-wifi = "{icon} {essid}";
+          format-ethernet = "󰀂 {ipaddr}";
+          format-disconnected = "󰤮 Disconnected";
+          format-icons = [ "󰤯" "󰤟" "󰤢" "󰤥" "󰤨" ];
+          tooltip-format-wifi = "{essid} ({frequency} GHz)\n⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}";
+          tooltip-format-ethernet = "⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}";
+          tooltip-format-disconnected = "Disconnected";
           max-length = 32;
-          on-click = "hyprctl dispatch exec '[float; size 900 700; move center] ghostty -e nmtui'";
+          on-click = "rfkill unblock wifi && hyprctl dispatch exec '[float; size 900 700; move center] ghostty -e impala'";
         };
-        
+
         battery = {
           states = {
             warning = 30;
@@ -124,7 +129,7 @@
           format-plugged = "󰚥 {capacity}%";
           format-icons = [ "" "" "" "" "" ];
         };
-        
+
         "hyprland/workspaces" = {
           format = "{icon}";
           on-click = "activate";
@@ -153,13 +158,13 @@
         };
       };
     };
-    
+
     style = builtins.readFile ./style.css;
   };
-  
+
   home.packages = with pkgs; [
     btop
-    wiremix                       
-    networkmanager                
+    wiremix
+    impala
   ];
 }

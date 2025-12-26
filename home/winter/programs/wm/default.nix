@@ -3,7 +3,7 @@
     ./waybar
     ./hyprlock
     ./rofi
-    ./swayidle
+    # ./swayidle
     ./swayosd
   ];
 }
