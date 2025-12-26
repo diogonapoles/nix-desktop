@@ -40,6 +40,12 @@ in
       options nvidia NVreg_PreserveVideoMemoryAllocations=1
       options nvidia NVreg_TemporaryFilePath=/var/tmp
       options nvidia NVreg_DriverObjectModel=1
+      options nvidia NVreg_UsePageAttributeTable=1
+      options nvidia NVreg_EnableResizableBar=1
+      options nvidia NVreg_EnableGpuFirmware=1
+      options nvidia NVreg_DynamicPowerManagement=0x02
+      options nvidia NVreg_EnableStreamMemOPs=1
+      options nvidia NVreg_RegistryDwords="RmEnableAggressiveVblank=1;RMIntrLockingMode=1"
     '';
 
     # Suspend/resume support

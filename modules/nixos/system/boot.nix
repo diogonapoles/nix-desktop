@@ -10,7 +10,6 @@ in
   config = lib.mkIf cfg.enable {
     boot = {
       kernelPackages = pkgs.linuxPackages_zen;
-      kernel.sysctl = { "vm.max_map_count" = 2147483642; };
 
       loader = {
         systemd-boot = {
@@ -35,6 +34,8 @@ in
         "amd_pstate=active"
         "nosplit_lock_mitigate"
         "clearcpuid=514"
+
+        "preempt=full"
       ];
 
       consoleLogLevel = 0;

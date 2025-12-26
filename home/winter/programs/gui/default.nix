@@ -3,5 +3,6 @@
     ./firefox
     ./obsidian
     ./zathura
+    ./discord
   ];
 }
