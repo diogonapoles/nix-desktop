@@ -128,6 +128,7 @@
       misc = {
         force_default_wallpaper = -1;
         disable_hyprland_logo = true;
+        exit_window_retains_fullscreen = true;
       };
 
       "$terminal" = "ghostty";
@@ -252,6 +253,7 @@
         "size 460 800, class:steam, title:Friends List"
         "idleinhibit fullscreen, class:steam"
 
+        # allow tearing
         "immediate, class:^(steam_app).*"
         "immediate, class:^(gamescope).*"
 
