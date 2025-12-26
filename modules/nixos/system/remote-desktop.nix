@@ -1,8 +1,8 @@
-{ 
-  lib, 
-  config, 
+{
+  lib,
+  config,
   pkgs,
-  ... 
+  ...
 }: let
   cfg = config.system.remote-desktop-custom;
 in {
@@ -27,15 +27,20 @@ in {
     services.sunshine = {
       enable = true;
       autoStart = true;
-      capSysAdmin = true; # only needed for Wayland
+      capSysAdmin = true; # only needed for Wayland -- omit this when using with Xorg
       openFirewall = true;
-      settings = {
-        # pc  - Only localhost may access the web ui
-        # lan - Only LAN devices may access the web ui
-        origin_web_ui_allowed = "pc";
-        lan_encryption_mode = 2;
-        wan_encryption_mode = 2;
+
+      # Override package to add CUDA support and NVIDIA runtime dependencies
+      package = pkgs.sunshine.override {
+        cudaSupport = true;
       };
+    };
+
+    # Add GPU library paths to systemd service environment for NVENC support
+    systemd.user.services.sunshine = {
+      serviceConfig.Environment = [
+        "LD_LIBRARY_PATH=/run/opengl-driver/lib:/run/opengl-driver-32/lib"
+      ];
     };
   };
 }

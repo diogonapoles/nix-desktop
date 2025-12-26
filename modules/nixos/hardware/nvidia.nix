@@ -1,4 +1,4 @@
-{ lib, config, ... }:
+{ lib, pkgs, config, ... }:
 let
   cfg = config.hardware.nvidia-custom;
 in
@@ -10,6 +10,13 @@ in
   config = lib.mkIf cfg.enable {
     services.xserver.videoDrivers = [ "nvidia" ];
 
+    boot.kernelParams = [
+      # Since NVIDIA does not load kernel mode setting by default,
+      # enabling it is required to make Wayland compositors function properly.
+      "nvidia-drm.fbdev=1"
+    ];
+
+    hardware.nvidia-container-toolkit.enable = true;
     hardware.graphics = {
       enable = true;
       enable32Bit = true;
@@ -52,5 +59,12 @@ in
     systemd.services.nvidia-suspend.enable = true;
     systemd.services.nvidia-resume.enable = true;
     systemd.services.nvidia-hibernate.enable = true;
+
+    services.sunshine.settings = {
+      max_bitrate = 20000; # in Kbps
+      # NVIDIA NVENC Encoder
+      nvenc_preset = 3; # 1(fastest + worst quality) - 7(slowest + best quality)
+      nvenc_twopass = "full_res"; # quarter_res / full_res.
+    };
   };
 }
