@@ -33,11 +33,7 @@
                 }
         );
     in {
-        lib = lib // (import ./lib { inherit inputs; });
-
-        nixosModules.default = import ./modules/nixos;
-
-        homeManagerModules = import ./modules/home-manager;
+        lib = lib // (import ./lib.nix { inherit lib; });
 
         nixosConfigurations = {
             apollo = lib.nixosSystem {

@@ -1,6 +1,7 @@
 {
   pkgs,
   inputs,
+  outputs,
   ...
 }: {
   imports = [
@@ -10,30 +11,38 @@
     inputs.stylix.nixosModules.stylix
 
     ./hardware-configuration.nix
-    ../common/global
-    ../common/users/winter
+
+    # Common settings shared across potential hosts
+    ../common/core.nix
+    ../common/users/winter.nix
+
+    # System modules (imported directly - active when imported)
+    ../../system/hardware/nvidia.nix
+    ../../system/hardware/bluetooth.nix
+    ../../system/services/pipewire.nix
+    ../../system/services/greetd.nix
+    ../../system/services/display-manager.nix
+    ../../system/services/home-manager.nix
+    ../../system/boot.nix
+    ../../system/networking.nix
+    ../../system/locale.nix
+    ../../system/containers.nix
+    ../../system/packages.nix
+    ../../system/memory.nix
+    ../../system/remote-desktop.nix
+    ../../system/gaming.nix
+    ../../system/stylix.nix
   ];
 
-  hardware.nvidia-custom.enable = true;
-  hardware.bluetooth-custom.enable = true;
+  # Home-manager configuration
+  home-manager.users.winter = ./home.nix;
 
-  services.pipewire-custom.enable = true;
-  services.tuigreet-custom.enable = true;
+  # PAM configuration for hyprlock
+  security.pam.services.hyprlock = {};
 
-  system.boot-custom.enable = true;
-  system.networking-custom.enable = true;
-  system.locale-custom.enable = true;
-  system.keyboard-custom.enable = true;
-  system.containers-custom.enable = true;
-  system.base-packages.enable = true;
-  system.remote-desktop-custom.enable = true;
-  system.stylix-custom.enable = true;
+  # CPU Performance Governor
+  powerManagement.cpuFreqGovernor = "performance";
 
-  gaming.steam-custom.enable = true;
-
-  networking = {
-    hostName = "apollo";
-  };
-
+  networking.hostName = "apollo";
   system.stateVersion = "25.11";
 }
