@@ -47,9 +47,6 @@ in
     toolkit.gdkScale = 2;
   };
 
-  # Assets (from assets.nix)
-  stylix.image = ../../assets/1377788.png;
-
   # Monitor config (from monitors.nix)
   wayland.windowManager.hyprland.settings.monitor =
     "DP-3, highres@highrr, auto, 1.5, bitdepth,10";

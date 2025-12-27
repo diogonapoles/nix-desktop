@@ -1,25 +1,42 @@
-{ ... }: {
+{ pkgs, ... }: {
+  stylix.fonts = {
+    sansSerif = {
+      package = pkgs.nerd-fonts.jetbrains-mono;
+      name = "JetBrainsMono Nerd Font";
+    };
+    serif = {
+      package = pkgs.nerd-fonts.jetbrains-mono;
+      name = "JetBrainsMono Nerd Font";
+    };
+    monospace = {
+      package = pkgs.nerd-fonts.jetbrains-mono;
+      name = "JetBrainsMono Nerd Font Mono";
+    };
+    emoji = {
+      package = pkgs.noto-fonts-color-emoji;
+      name = "Noto Color Emoji";
+    };
+  };
+
   stylix.targets = {
-    # Disable styling for applications with custom themes
     waybar.enable = false;
     rofi.enable = false;
     hyprland.enable = false;
     hyprlock.enable = false;
-    ghostty.enable = false;
+    ghostty = {
+      enable = true;
+      fonts.enable = false;
+    };
 
-    # Disable GTK and GNOME theming (using custom themes)
-    gtk.enable = false;
-    gnome.enable = false;
-
-    # Enable styling for Qt applications
+    gtk.enable = true;
+    gnome.enable = true;
     qt.enable = true;
 
-    # Terminal and CLI tools
     btop.enable = true;
-    fzf.enable = true;
+    fzf.enable = false;
     zathura.enable = true;
 
-    # Browsers
-    firefox.enable = true;
+    firefox.enable = false;
+    vesktop.enable = true;
   };
 }

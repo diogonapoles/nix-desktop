@@ -14,11 +14,11 @@
     '';
 
     "swayosd/style.css".text = ''
-      @define-color background-color #282828;
-      @define-color border-color #a89984;
-      @define-color label #ebdbb2;
-      @define-color image #ebdbb2;
-      @define-color progress #ebdbb2;
+      @define-color background-color #${config.lib.stylix.colors.base00};
+      @define-color border-color #${config.lib.stylix.colors.base04};
+      @define-color label #${config.lib.stylix.colors.base05};
+      @define-color image #${config.lib.stylix.colors.base05};
+      @define-color progress #${config.lib.stylix.colors.base05};
 
       window {
         border-radius: 0;

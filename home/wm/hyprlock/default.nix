@@ -11,8 +11,8 @@
       background = [
         {
           monitor = "";
-          color = "rgba(40, 40, 40, 1.0)";
-          path = "${config.home.homeDirectory}/nixos/assets/forest-5.jpg";
+          color = "rgb(${config.lib.stylix.colors.base00})";
+          path = "${config.home.homeDirectory}/nixos/assets/1377788.png";
           blur_passes = 3;
         }
       ];
@@ -28,15 +28,15 @@
           position = "0, 0";
           halign = "center";
           valign = "center";
-          inner_color = "rgba(40, 40, 40, 0.8)";
-          outer_color = "rgba(212, 190, 152, 1.0)";
+          inner_color = "rgba(${config.lib.stylix.colors.base00-rgb-r}, ${config.lib.stylix.colors.base00-rgb-g}, ${config.lib.stylix.colors.base00-rgb-b}, 0.8)";
+          outer_color = "rgb(${config.lib.stylix.colors.base05})";
           outline_thickness = 4;
           font_family = "JetBrainsMono Nerd Font";
-          font_color = "rgba(212, 190, 152, 1.0)";
+          font_color = "rgb(${config.lib.stylix.colors.base05})";
           dots_size = 0.2;
           dots_spacing = 0.3;
           placeholder_text = "Enter Password";
-          check_color = "rgba(214, 153, 92, 1.0)";
+          check_color = "rgb(${config.lib.stylix.colors.base09})";
           fail_text = "<i>$FAIL ($ATTEMPTS)</i>";
           rounding = 0;
           shadow_passes = 0;

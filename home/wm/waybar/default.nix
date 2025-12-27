@@ -1,4 +1,5 @@
 {
+  config,
   pkgs,
   lib,
   ...
@@ -159,7 +160,97 @@
       };
     };
 
-    style = builtins.readFile ./style.css;
+    style = ''
+      /* -----------------------------------------------------------------------------
+       * Base styles with Stylix colors
+       * -------------------------------------------------------------------------- */
+
+      * {
+        border: none;
+        border-radius: 0;
+        font-family: JetBrainsMono Nerd Font;
+        font-size: 13px;
+        min-height: 0;
+      }
+
+      window#waybar {
+        background: #${config.lib.stylix.colors.base00};
+        color: #${config.lib.stylix.colors.base06};
+        transition-property: background-color;
+        transition-duration: 0.5s;
+        margin: 2px 5px 0 5px;
+        margin-bottom: 8px;
+      }
+
+      #image {
+        margin-left: 5px;
+      }
+
+      #battery,
+      #clock,
+      #cpu,
+      #custom-keyboard-layout,
+      #memory,
+      #mode,
+      #network,
+      #pulseaudio,
+      #temperature,
+      #tray,
+      #language,
+      #bluetooth,
+      #mic,
+      #sound {
+        padding: 1px 10px;
+        background-color: transparent;
+      }
+
+      #clock {
+        color: #${config.lib.stylix.colors.base00};
+        background-color: #${config.lib.stylix.colors.base0D};
+      }
+
+      #pulseaudio {
+        background-color: #${config.lib.stylix.colors.base01};
+      }
+
+      #network {
+        background-color: #${config.lib.stylix.colors.base01};
+      }
+
+      #cpu {
+        background-color: #${config.lib.stylix.colors.base01};
+      }
+
+      #memory {
+        background-color: #${config.lib.stylix.colors.base01};
+      }
+
+      @keyframes blink {
+        to {
+          border-color: #${config.lib.stylix.colors.base0D};
+        }
+      }
+
+      #workspaces button {
+        padding: 0 5px;
+        background-color: transparent;
+        color: #${config.lib.stylix.colors.base06};
+        font-family: "Noto Sans JP", "JetBrainsMono Nerd Font";
+      }
+
+      #workspaces button:hover {
+        background: #${config.lib.stylix.colors.base01};
+      }
+
+      #workspaces button.active {
+        color: #${config.lib.stylix.colors.base00};
+        background-color: #${config.lib.stylix.colors.base0B};
+      }
+
+      #workspaces button.urgent {
+        background-color: #${config.lib.stylix.colors.base08};
+      }
+    '';
   };
 
   home.packages = with pkgs; [

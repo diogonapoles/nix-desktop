@@ -1,16 +1,15 @@
-{ 
-  pkgs, 
-  ... 
+{
+  config,
+  pkgs,
+  ...
 }: {
   programs.ghostty = {
     enable = true;
     settings = {
-      theme = "Gruvbox Dark";
-      
       font-family = "FiraCode Nerd Font Mono";
       font-style = "Regular";
       font-size = 10;
-      
+
       window-theme = "ghostty";
       window-padding-x = 10;
       window-padding-y = 10;
@@ -18,7 +17,7 @@
       background-opacity = 0.80;
       resize-overlay = "never";
       gtk-toolbar-style = "flat";
-      
+
       cursor-style = "block";
       cursor-style-blink = false;
       
