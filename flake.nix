@@ -3,14 +3,15 @@
 
     inputs = {
         nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-
         home-manager = {
             url = "github:nix-community/home-manager";
             inputs.nixpkgs.follows = "nixpkgs";
         };
-
+        stylix = {
+          url = "github:nix-community/stylix";
+          inputs.nixpkgs.follows = "nixpkgs";
+        };
         systems.url = "github:nix-systems/default-linux";
-
         hardware.url = "github:nixos/nixos-hardware";
     };
 
@@ -33,8 +34,6 @@
         );
     in {
         lib = lib // (import ./lib { inherit inputs; });
-        packages = forEachSystem (pkgs: import ./pkgs { inherit pkgs; });
-        overlays = import ./overlays { inherit inputs; };
 
         nixosModules.default = import ./modules/nixos;
 

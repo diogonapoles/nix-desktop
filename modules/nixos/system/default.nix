@@ -18,5 +18,6 @@
     ./containers.nix
     ./base-packages.nix
     ./remote-desktop.nix
+    ./stylix.nix
   ];
 }

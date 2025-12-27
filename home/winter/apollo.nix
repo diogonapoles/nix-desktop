@@ -23,6 +23,7 @@
   # Enable configuration modules
   theme.assets.enable = true;
   monitors.enable = true;
+  programs.stylix-targets.enable = true;
 
   # Path to NixOS flake configuration directory
   home.sessionVariables.NH_FLAKE = "/home/${config.home.username}/nixos";

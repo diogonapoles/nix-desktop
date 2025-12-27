@@ -34,8 +34,8 @@
         gaps_in = 2;
         gaps_out = 7;
         border_size = 2;
-        "col.active_border" = "rgba(d5c4a1ff)";  # Gruvbox light cream
-        "col.inactive_border" = "rgba(928374ff)";  # Gruvbox medium brown
+        "col.active_border" = "rgb(${config.lib.stylix.colors.base05})";
+        "col.inactive_border" = "rgb(${config.lib.stylix.colors.base03})";
         resize_on_border = false;
         no_border_on_floating = false;
         allow_tearing = true;
@@ -49,14 +49,6 @@
 
         shadow = {
           enabled = false;
-          range = 8;
-          render_power = 5;
-          sharp = false;
-          ignore_window = false;
-          color = "rgba(000000A3)";
-          color_inactive = "rgba(00000052)";
-          offset = "0 0";
-          scale = 1.0;
         };
 
         blur = {
