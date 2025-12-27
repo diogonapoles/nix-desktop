@@ -31,6 +31,7 @@ in
     ../../home/wm/rofi
     ../../home/wm/swayidle
     ../../home/wm/swayosd
+    ../../home/wm/mako
 
     # GUI Apps
     ../../home/apps/firefox

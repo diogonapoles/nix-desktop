@@ -129,7 +129,6 @@
       "$menu" = "rofi -show drun";
       "$fileManager" = "ghostty -e yazi -- --class=center-float-mini";
       "$obsidian" = "obsidian --disable-gpu --enable-wayland-ime";
-      # "$swaync" = "uwsm-app -- swaync-client --toggle-panel";
       "$lock" = "hyprlock";
       "$powermenu" = "powermenu";
 
@@ -139,7 +138,6 @@
         "SUPER, Space, exec, $menu"
         "SUPER, E, exec, $fileManager"
         "SUPER SHIFT, O, exec, $obsidian"
-        # "SUPER, Z, exec, $swaync"
         "SUPER, X, exec, $lock"
         "SUPER, Escape, exec, $powermenu"
 
@@ -265,24 +263,9 @@
         "noblur, tag:games*"
       ];
 
-      # Layer rules
-      layerrule = [
-        "blur, swaync-control-center"
-        "blur, swaync-notification-window"
-        "ignorezero, swaync-control-center"
-        "ignorezero, swaync-notification-window"
-        "ignorealpha 0.1, swaync-control-center"
-        "ignorealpha 0.1, swaync-notification-window"
-      ];
-
       "exec-once" = [
         "swaybg -i ${config.home.homeDirectory}/nixos/assets/1377788.png -m fill"
-        "waybar"
-        # "uwsm-app -- swaync"
-        # "uwsm-app -- wl-paste --watch cliphist store"
       ];
-
-      # Monitor config is set in hosts/apollo/home.nix
     };
   };
 
