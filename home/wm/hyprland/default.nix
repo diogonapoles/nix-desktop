@@ -201,20 +201,21 @@
         "SUPER, mouse:273, resizewindow"
       ];
 
-      bindel = [
-        ", XF86AudioRaiseVolume, exec, wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"
-        ", XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
-        ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
-        ", XF86AudioMicMute, exec, wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
-        ", XF86MonBrightnessUp, exec, brightnessctl -e4 -n2 set 5%+"
-        ", XF86MonBrightnessDown, exec, brightnessctl -e4 -n2 set 5%-"
-      ];
+      "$osdclient" = "swayosd-client --monitor \"$(hyprctl monitors -j | jq -r '.[] | select(.focused == true).name')\"";
 
-      bindl = [
-        ", XF86AudioNext, exec, playerctl next"
-        ", XF86AudioPause, exec, playerctl play-pause"
-        ", XF86AudioPlay, exec, playerctl play-pause"
-        ", XF86AudioPrev, exec, playerctl previous"
+      bindld = [
+        ",XF86AudioRaiseVolume, Volume up, exec, $osdclient --output-volume raise"
+        ",XF86AudioLowerVolume, Volume down, exec, $osdclient --output-volume lower"          
+        "ALT,XF86AudioRaiseVolume, Volume up precise, exec, $osdclient --output-volume +1"   
+        "ALT,XF86AudioLowerVolume, Volume down precise, exec, $osdclient --output-volume -1" 
+                                                                                            
+        ",XF86AudioMute, Mute, exec, $osdclient --output-volume mute-toggle"                  
+        ",XF86AudioMicMute, Mute microphone, exec, $osdclient --input-volume mute-toggle"     
+                                                                                            
+        ",XF86AudioNext, Next track, exec, $osdclient --playerctl next"                       
+        ",XF86AudioPause, Pause, exec, $osdclient --playerctl play-pause"                     
+        ",XF86AudioPlay, Play, exec, $osdclient --playerctl play-pause"                       
+        ",XF86AudioPrev, Previous track, exec, $osdclient --playerctl previous"               
       ];
 
       "$center-float-large" = "class:^(center-float-large)$|^(.*Geeqie.*)$|^(.*geeqie.*)$|^(.*celluloid.*)$|^(.*mpv.*)$|^(.*File Upload.*)$|^(.*imv.*)$";
