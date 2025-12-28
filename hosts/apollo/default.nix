@@ -34,6 +34,24 @@
 
   home-manager.users.winter = ./home.nix;
 
+  stylix-custom = {
+    enable = true;
+    colorscheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-medium.yaml";
+    polarity = "dark";
+
+    cursor = {
+      name = "Bibata-Modern-Ice";
+      package = pkgs.bibata-cursors;
+      size = 24;
+    };
+
+    icons = {
+      package = pkgs.papirus-icon-theme.override { color = "green"; };
+      dark = "Papirus-Dark";
+      light = "Papirus-Light";
+    };
+  };
+
   security.pam.services.hyprlock = {};
 
   powerManagement.cpuFreqGovernor = "performance";
