@@ -50,5 +50,36 @@ in
   wayland.windowManager.hyprland.settings.monitor =
     "DP-3, highres@highrr, auto, 1.5, bitdepth,10";
 
+  # Declarative Sunshine apps.json configuration for Steam Deck streaming
+  xdg.configFile."sunshine/apps.json" = {
+    text = builtins.toJSON {
+      env = {
+        PATH = "$(PATH):$(HOME)/.local/bin";
+      };
+      apps = [
+        {
+          name = "Desktop";
+          image-path = "desktop.png";
+        }
+        {
+          name = "Steam Big Picture";
+          output = 1;
+          prep-cmd = [
+            {
+              do = "sunshine-monitor-create && sleep 1";
+              undo = "sunshine-monitor-remove && setsid steam steam://close/bigpicture";
+            }
+          ];
+          cmd = "sunshine-launch-steam";
+          image-path = "steam.png";
+        }
+      ];
+    };
+    onChange = ''
+      # Restart Sunshine when apps.json changes
+      systemctl --user restart sunshine.service 2>/dev/null || true
+    '';
+  };
+
   home.sessionVariables.NH_FLAKE = "${homeDir}/nixos";
 }

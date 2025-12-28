@@ -51,10 +51,29 @@
 
   services.sunshine.settings = {
     upnp = true;
+    output_name = "1";
 
+    # NVENC encoder settings optimized for Steam Deck OLED low-latency streaming
     encoder = "nvenc";
 
-    nvenc_preset = 1;  # P1 preset (Performance)
-    nvenc_twopass = "quarter_res";  # Quarter resolution two-pass
+    # P1 preset = lowest encoding latency (~458 fps encoding speed)
+    nvenc_preset = 1;
+
+    # Ultra Low Latency tuning = strict in-order pipeline, no B-frames
+    # This is the key setting for minimizing latency
+    nvenc_tuning = "ull";
+
+    # Constant bitrate for consistent frame pacing
+    nvenc_rc = "cbr";
+
+    # Quarter-res two-pass helps bitrate distribution
+    nvenc_twopass = "quarter_res";
+
+    # 20 Mbps for Steam Deck OLED (increased from 15 Mbps)
+    # OLED can handle better quality while maintaining low latency
+    bitrate = 20000;
+
+    # Minimize threading overhead
+    min_threads = 1;
   };
 }

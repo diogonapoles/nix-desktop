@@ -261,6 +261,26 @@
         "tag +gamestore, title:^([Ll]utris)$"
         "tag +gamestore, class:^(com.heroicgameslauncher.hgl)$"
         "noblur, tag:games*"
+
+        # Force Steam Big Picture to streaming monitor and workspace 3
+        "monitor streaming, title:^(Steam Big Picture Mode)$"
+        "workspace 3, title:^(Steam Big Picture Mode)$"
+        "fullscreen, title:^(Steam Big Picture Mode)$"
+
+        # Force all Steam games (steam_app_*) to streaming monitor
+        "monitor streaming, class:^steam_app_"
+        "workspace 3, class:^steam_app_"
+
+        # Force gamescope games to streaming monitor
+        "monitor streaming, class:^gamescope$"
+        "workspace 3, class:^gamescope$"
+
+        # Force all games to streaming monitor when it exists (fallback for tagged games)
+        "monitor streaming, tag:games"
+        "workspace 3, tag:games"
+
+        # Force game store apps to streaming monitor when streaming
+        "monitor streaming, tag:gamestore"
       ];
 
       "exec-once" = [
