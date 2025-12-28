@@ -33,7 +33,6 @@
 
   boot.blacklistedKernelModules = ["nouveau" "nova_core"];
 
-  # Extra kernel options
   boot.extraModprobeConfig = ''
     options nvidia NVreg_PreserveVideoMemoryAllocations=1
     options nvidia NVreg_TemporaryFilePath=/var/tmp
@@ -46,7 +45,6 @@
     options nvidia NVreg_RegistryDwords="RmEnableAggressiveVblank=1;RMIntrLockingMode=1"
   '';
 
-  # Suspend/resume support
   systemd.services.nvidia-suspend.enable = true;
   systemd.services.nvidia-resume.enable = true;
   systemd.services.nvidia-hibernate.enable = true;

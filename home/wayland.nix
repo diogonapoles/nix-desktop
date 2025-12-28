@@ -22,37 +22,31 @@ in
   };
 
   config = lib.mkIf cfg.enable {
-    # XDG Portal configuration
     xdg.portal = {
       enable = true;
       extraPortals = [ pkgs.xdg-desktop-portal-wlr ];
     };
 
     home.sessionVariables = {
-      # Wayland Session Configuration
       XDG_SESSION_TYPE = "wayland";
 
-      # Browser & Electron Application Configuration
-      NIXOS_OZONE_WL = "1";           # Chromium/Electron Wayland support
-      MOZ_ENABLE_WAYLAND = "1";       # Firefox Wayland support
-      MOZ_WEBRENDER = "1";            # Firefox WebRender
+      # browser & electron application configuration
+      NIXOS_OZONE_WL = "1";           # chromium/electron wayland support
+      MOZ_ENABLE_WAYLAND = "1";       # firefox wayland support
+      MOZ_WEBRENDER = "1";            # firefox webRender
       ELECTRON_OZONE_PLATFORM_HINT = "auto";
 
-      # Qt Configuration
       QT_WAYLAND_DISABLE_WINDOWDECORATION = "1";
       QT_QPA_PLATFORM = "wayland";
 
-      # SDL Configuration
       SDL_VIDEODRIVER = "wayland";
 
-      # GTK Configuration
-      GDK_BACKEND = "wayland, x11";   # Prefer Wayland but fallback to X11
+      GDK_BACKEND = "wayland, x11";   
       GDK_SCALE = toString cfg.toolkit.gdkScale;
 
-      # Java AWT window manager compatibility
+      # java AWT window manager compatibility
       _JAVA_AWT_WM_NONREPARENTING = "1";
     } // lib.optionalAttrs cfg.nvidia.enable {
-      # NVIDIA-specific environment variables
       LIBVA_DRIVER_NAME = "nvidia";
       __GLX_VENDOR_LIBRARY_NAME = "nvidia";
       NVD_BACKEND = cfg.nvidia.backend;

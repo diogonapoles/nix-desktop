@@ -15,16 +15,16 @@ in
     ../../home/gtk.nix
     ../../home/scripts.nix
 
-    # Shell
+    # shell
     ../../home/shell/zsh
 
-    # Terminal programs
+    # terminal programs
     ../../home/terminal/ghostty
     ../../home/terminal/yazi
     ../../home/terminal/btop
     ../../home/terminal/fastfetch
 
-    # WM and companions
+    # wm and companions
     ../../home/wm/hyprland
     ../../home/wm/waybar
     ../../home/wm/hyprlock
@@ -33,7 +33,7 @@ in
     ../../home/wm/swayosd
     ../../home/wm/mako
 
-    # GUI Apps
+    # gui apps
     ../../home/apps/firefox
     ../../home/apps/discord
     ../../home/apps/obsidian
@@ -41,17 +41,14 @@ in
     ../../home/apps/misc.nix
   ];
 
-  # Wayland environment
   programs.wayland = {
     enable = true;
     nvidia.enable = true;
     toolkit.gdkScale = 2;
   };
 
-  # Monitor config (from monitors.nix)
   wayland.windowManager.hyprland.settings.monitor =
     "DP-3, highres@highrr, auto, 1.5, bitdepth,10";
 
-  # Path to NixOS flake configuration directory
   home.sessionVariables.NH_FLAKE = "${homeDir}/nixos";
 }

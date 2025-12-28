@@ -1,8 +1,6 @@
 { ... }: {
-  # Time zone
   time.timeZone = "Europe/Lisbon";
 
-  # Locale settings
   i18n.defaultLocale = "en_US.UTF-8";
 
   i18n.extraLocaleSettings = {
@@ -17,7 +15,6 @@
     LC_TIME = "pt_PT.UTF-8";
   };
 
-  # Keyboard layout
   services.xserver.xkb = {
     layout = "us";
     variant = "";

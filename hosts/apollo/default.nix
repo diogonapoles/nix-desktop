@@ -12,11 +12,9 @@
 
     ./hardware-configuration.nix
 
-    # Common settings shared across potential hosts
     ../common/core.nix
     ../common/users/winter.nix
 
-    # System modules (imported directly - active when imported)
     ../../system/hardware/nvidia.nix
     ../../system/hardware/bluetooth.nix
     ../../system/services/pipewire.nix
@@ -34,13 +32,10 @@
     ../../system/stylix.nix
   ];
 
-  # Home-manager configuration
   home-manager.users.winter = ./home.nix;
 
-  # PAM configuration for hyprlock
   security.pam.services.hyprlock = {};
 
-  # CPU Performance Governor
   powerManagement.cpuFreqGovernor = "performance";
 
   networking.hostName = "apollo";

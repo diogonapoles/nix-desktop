@@ -16,7 +16,6 @@ in
   # How to use:
   #  1. setup user via Web Console: <https://localhost:47990/>):
   #  2. on another machine, connect to sunshine via moonlight-qt client
-  #  3. Select "Steam Deck Big Picture" application for 1280x800 streaming
   #
   # systemctl --user status sunshine
   #
@@ -27,13 +26,13 @@ in
     capSysAdmin = true; # omit this when using with Xorg
     openFirewall = true;
 
-    # Override package to add CUDA support and NVIDIA runtime dependencies
+    # override package to add CUDA support and NVIDIA runtime dependencies
     package = pkgs.sunshine.override {
       cudaSupport = true;
     };
   };
 
-  # Add GPU library paths to systemd service environment for NVENC support
+  # GPU library paths to systemd service environment for NVENC support
   systemd.user.services.sunshine = {
     serviceConfig.Environment = [
       "LD_LIBRARY_PATH=/run/opengl-driver/lib:/run/opengl-driver-32/lib"

@@ -3,7 +3,7 @@
   config,
   ...
 }: {
-  # NH (NixOS helper)
+  # NixOS helper
   programs.nh = {
     enable = true;
 
@@ -16,13 +16,11 @@
     };
   };
 
-  # Additional packages
   home.packages = with pkgs; [
     impala
-    claude-code          # CLI tool for AI assistance
-    wpa_supplicant_gui   # WiFi GUI
+    claude-code          
+    wpa_supplicant_gui   
   ];
 
-  # Lazydocker
   programs.lazydocker.enable = true;
 }

@@ -3,7 +3,6 @@
   pkgs,
   ...
 }: {
-  # Git configuration
   programs.git = {
     enable = true;
 
@@ -35,7 +34,7 @@
     };
   };
 
-  # Delta (diff viewer)
+  # diff viewer
   programs.delta = {
     enable = true;
     options = {
@@ -47,7 +46,6 @@
     };
   };
 
-  # GitHub CLI
   programs.gh = {
     enable = true;
 
@@ -57,10 +55,8 @@
     };
   };
 
-  # Lazygit
   programs.lazygit.enable = true;
 
-  # SSH configuration
   programs.ssh = {
     enable = true;
 
