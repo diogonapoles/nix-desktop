@@ -265,6 +265,7 @@
 
       "exec-once" = [
         "swaybg -i ${config.home.homeDirectory}/nixos/assets/1377788.png -m fill"
+        "waybar"
       ];
     };
   };

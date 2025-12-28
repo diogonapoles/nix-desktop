@@ -1,7 +1,12 @@
 {
   pkgs,
+  config,
   ...
-}: {
+}:
+let
+  homeDir = config.users.users.winter.home;
+in
+{
   environment.systemPackages = with pkgs; [
     moonlight-qt
   ];
@@ -11,6 +16,7 @@
   # How to use:
   #  1. setup user via Web Console: <https://localhost:47990/>):
   #  2. on another machine, connect to sunshine via moonlight-qt client
+  #  3. Select "Steam Deck Big Picture" application for 1280x800 streaming
   #
   # systemctl --user status sunshine
   #
@@ -18,7 +24,7 @@
   services.sunshine = {
     enable = true;
     autoStart = true;
-    capSysAdmin = true; # only needed for Wayland -- omit this when using with Xorg
+    capSysAdmin = true; # omit this when using with Xorg
     openFirewall = true;
 
     # Override package to add CUDA support and NVIDIA runtime dependencies
