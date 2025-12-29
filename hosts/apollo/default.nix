@@ -27,7 +27,6 @@
     ../../system/containers.nix
     ../../system/packages.nix
     ../../system/memory.nix
-    ../../system/remote-desktop.nix
     ../../system/gaming.nix
     ../../system/stylix.nix
   ];
