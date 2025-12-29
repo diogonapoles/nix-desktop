@@ -1,5 +1,6 @@
 { pkgs, ... }: {
   environment.systemPackages = with pkgs; [
+    protonup-qt      # Compatibility tool installer
     mesa-demos       # Show hardware information
     heroic           # Native GOG, Epic, and Amazon Games Launcher for Linux, Windows and Mac
     joystickwake     # Joystick-aware screen waker
