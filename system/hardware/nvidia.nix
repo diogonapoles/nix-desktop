@@ -49,12 +49,12 @@
   systemd.services.nvidia-resume.enable = true;
   systemd.services.nvidia-hibernate.enable = true;
 
-  # services.sunshine.settings = {
-  #   upnp = true;
-  #
-  #   encoder = "nvenc";
-  #
-  #   nvenc_preset = 1;  # P1 preset (Performance)
-  #   nvenc_twopass = "quarter_res";  # Quarter resolution two-pass
-  # };
+  services.sunshine.settings = {
+    upnp = true;
+
+    encoder = "nvenc";
+
+    nvenc_preset = 1;  # P1 preset (Performance)
+    nvenc_twopass = "quarter_res";  # Quarter resolution two-pass
+  };
 }

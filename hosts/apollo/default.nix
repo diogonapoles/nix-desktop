@@ -28,6 +28,7 @@
     ../../system/packages.nix
     ../../system/memory.nix
     ../../system/gaming.nix
+    ../../system/remote-desktop.nix
     ../../system/stylix.nix
   ];
 
