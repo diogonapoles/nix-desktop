@@ -45,15 +45,15 @@
     settings = {
       general = {
         desiredgov = "performance";
-        disable_splitlock = 1;
-        inhibit_screensaver = 1;
+        # disable_splitlock = 1;
+        # inhibit_screensaver = 1;
         ioprio = 0;
-        renice = 10;
+        # renice = 10;
         softrealtime = "auto";
       };
-      cpu = {
-        park_cores = "yes";
-      };
+      # cpu = {
+      #   park_cores = "yes";
+      # };
       gpu = {
         apply_gpu_optimisations = "accept-responsibility";
         nv_powermizer_mode = "1";
