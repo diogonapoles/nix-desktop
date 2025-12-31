@@ -1,5 +1,4 @@
-{ pkgs, ... }: {
-  # Nix configuration
+{ pkgs, inputs, ... }: {
   nix = {
     package = pkgs.nix;
 
@@ -7,16 +6,14 @@
       experimental-features = [ "nix-command" "flakes" ];
       auto-optimise-store = true;
     };
-
-    gc = {
-      automatic = true;
-      dates = "weekly";
-      options = "--delete-older-than 30d";
-    };
   };
 
-  # Nixpkgs configuration
-  nixpkgs.config.allowUnfree = true;
+  nixpkgs = {
+    config.allowUnfree = true;
+    overlays = [
+      inputs.nix-cachyos-kernel.overlays.default
+    ];
+  };
 
   # Firmware
   hardware.enableRedistributableFirmware = true;
