@@ -35,6 +35,7 @@ in
 
     # gui apps
     ../../home/apps/discord
+    ../../home/apps/firefox
     ../../home/apps/obsidian
     ../../home/apps/zathura
 
