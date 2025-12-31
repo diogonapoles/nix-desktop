@@ -22,6 +22,7 @@
     ../../system/services/greetd.nix
     ../../system/services/display-manager.nix
     ../../system/services/home-manager.nix
+    # ../../system/services/openrgb.nix
 
     ../../system/boot.nix
     ../../system/networking.nix
@@ -37,12 +38,20 @@
 
   home-manager.users.winter = ./home.nix;
 
-
-  services.hardware = {
-    openrgb = {
-      enable = true;
-    };
-  };
+  # environment.systemPackages = [ pkgs.i2c-tools ];
+  # boot.kernelModules = [ "12c-dev" "12c-piix4" ];
+  # services.hardware.openrgb = {
+  #   enable = true;
+  #   motherboard = "amd";
+  #   # package = pkgs.openrgb-with-all-plugins; # enable all plugins
+  # };
+  # services.udev.extraRules = ''
+  #   SUBSYSTEMS=="usb|hidraw", ATTRS{idVendor}=="048d", ATTRS{idProduct}=="8297", TAG+="uaccess", TAG+="Gigabyte_RGB_Fusion_2_USB"
+  #   SUBSYSTEMS=="usb|hidraw", ATTRS{idVendor}=="048d", ATTRS{idProduct}=="8950", TAG+="uaccess", TAG+="Gigabyte_RGB_Fusion_2_USB"
+  #   SUBSYSTEMS=="usb|hidraw", ATTRS{idVendor}=="048d", ATTRS{idProduct}=="5702", TAG+="uaccess", TAG+="Gigabyte_RGB_Fusion_2_USB"
+  #   SUBSYSTEMS=="usb|hidraw", ATTRS{idVendor}=="048d", ATTRS{idProduct}=="5711", TAG+="uaccess", TAG+="Gigabyte_RGB_Fusion_2_USB"
+  #   SUBSYSTEMS=="usb|hidraw", ATTRS{idVendor}=="1b1c", ATTRS{idProduct}=="0c3f", TAG+="uaccess", TAG+="Corsair_iCUE_Link_System_Hub"
+  # '';
 
   stylix-custom = {
     enable = true;

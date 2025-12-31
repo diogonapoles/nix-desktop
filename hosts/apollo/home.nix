@@ -39,6 +39,9 @@ in
     ../../home/apps/obsidian
     ../../home/apps/zathura
 
+    # services
+    ../../home/services/openrgb.nix
+
     ../../home/apps/misc.nix
   ];
 
