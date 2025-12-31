@@ -1,4 +1,7 @@
-{ pkgs, ... }: {
+{ 
+  pkgs, 
+  ... 
+}: {
   environment.systemPackages = with pkgs; [
     protonup-qt      # Compatibility tool installer
     mesa-demos       # Show hardware information
@@ -9,24 +12,9 @@
     winetricks       # Script to install DLLs needed to work around problems in Wine
   ];
 
-  # services = {
-  #   hardware = {
-  #     openrgb = {
-  #       enable = true;
-  #       package = pkgs.openrgb-with-all-plugins;
-  #     };
-  #   };
-  # };
-
   environment.sessionVariables = {
     STEAM_EXTRA_COMPAT_TOOLS_PATHS = "\${HOME}/.steam/root/compatibilitytools.d";
     MANGOHUD_CONFIG = "control=mangohud,legacy_layout=0,vertical,background_alpha=0,gpu_stats,gpu_power,gpu_temp,cpu_stats,cpu_temp,core_load,ram,vram,fps,fps_metrics=AVG,0.001,frametime,refresh_rate,resolution, vulkan_driver,wine";
-
-    __GL_GSYNC_ALLOWED = "1";
-    __GL_VRR_ALLOWED = "1";
-    PROTON_ENABLE_NVAPI = "1";
-    PROTON_HIDE_NVIDIA_GPU = "0";
-    PROTON_ENABLE_NGX_UPDATER = "1";
   };
 
   services.udev.extraRules = ''
@@ -48,7 +36,7 @@
         # disable_splitlock = 1;
         # inhibit_screensaver = 1;
         ioprio = 0;
-        # renice = 10;
+        renice = 10;
         softrealtime = "auto";
       };
       # cpu = {
@@ -73,6 +61,16 @@
     gamescopeSession.enable = true;
 
     package = pkgs.steam.override {
+      extraEnv = {
+        MANGOHUD = true;
+        PROTON_ENABLE_WAYLAND = true;
+        PROTON_ENABLE_HDR = true;
+        PROTON_USE_WOW64 = true;
+        PROTON_USE_NTSYNC = true;
+        PROTON_ENABLE_NVAPI = "1";
+        PROTON_HIDE_NVIDIA_GPU = "0";
+      };
+
       extraPkgs =
         pkgs: with pkgs; [
           # controller support libraries
