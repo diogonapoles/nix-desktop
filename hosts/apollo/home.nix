@@ -34,10 +34,10 @@ in
     ../../home/wm/mako
 
     # gui apps
-    ../../home/apps/firefox
     ../../home/apps/discord
     ../../home/apps/obsidian
     ../../home/apps/zathura
+
     ../../home/apps/misc.nix
   ];
 

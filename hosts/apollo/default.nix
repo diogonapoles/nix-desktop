@@ -30,6 +30,7 @@
     ../../system/gaming.nix
     ../../system/remote-desktop.nix
     ../../system/stylix.nix
+    ../../system/coolercontrol.nix
   ];
 
   home-manager.users.winter = ./home.nix;

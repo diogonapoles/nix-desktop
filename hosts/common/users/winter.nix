@@ -14,6 +14,7 @@
       "networkmanager"
       "video"
       "wheel"
+      "gamemode"
     ] config;
 
     packages = [ pkgs.home-manager ];
