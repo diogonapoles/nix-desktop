@@ -17,10 +17,13 @@
 
     ../../system/hardware/nvidia.nix
     ../../system/hardware/bluetooth.nix
+
     ../../system/services/pipewire.nix
     ../../system/services/greetd.nix
     ../../system/services/display-manager.nix
     ../../system/services/home-manager.nix
+    ../../system/services/rgb.nix
+
     ../../system/boot.nix
     ../../system/networking.nix
     ../../system/locale.nix
