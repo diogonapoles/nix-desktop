@@ -9,6 +9,15 @@
     winetricks       # Script to install DLLs needed to work around problems in Wine
   ];
 
+  # services = {
+  #   hardware = {
+  #     openrgb = {
+  #       enable = true;
+  #       package = pkgs.openrgb-with-all-plugins;
+  #     };
+  #   };
+  # };
+
   environment.sessionVariables = {
     STEAM_EXTRA_COMPAT_TOOLS_PATHS = "\${HOME}/.steam/root/compatibilitytools.d";
     MANGOHUD_CONFIG = "control=mangohud,legacy_layout=0,vertical,background_alpha=0,gpu_stats,gpu_power,gpu_temp,cpu_stats,cpu_temp,core_load,ram,vram,fps,fps_metrics=AVG,0.001,frametime,refresh_rate,resolution, vulkan_driver,wine";

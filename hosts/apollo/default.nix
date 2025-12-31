@@ -37,6 +37,13 @@
 
   home-manager.users.winter = ./home.nix;
 
+
+  services.hardware = {
+    openrgb = {
+      enable = true;
+    };
+  };
+
   stylix-custom = {
     enable = true;
     colorscheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-medium.yaml";

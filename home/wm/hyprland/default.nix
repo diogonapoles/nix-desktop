@@ -121,7 +121,7 @@
       misc = {
         force_default_wallpaper = -1;
         disable_hyprland_logo = true;
-        exit_window_retains_fullscreen = true;
+        # exit_window_retains_fullscreen = true;
       };
 
       "$terminal" = "ghostty";

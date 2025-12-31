@@ -9,6 +9,7 @@
     shell = pkgs.zsh;
     extraGroups = outputs.lib.ifTheyExist [
       "audio"
+      "i2c"
       "docker"
       "git"
       "networkmanager"
