@@ -29,7 +29,7 @@ in
     ../../home/wm/waybar
     ../../home/wm/hyprlock
     ../../home/wm/rofi
-    ../../home/wm/swayidle
+    ../../home/wm/hypridle
     ../../home/wm/swayosd
     ../../home/wm/mako
 
