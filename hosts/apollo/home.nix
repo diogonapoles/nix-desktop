@@ -7,39 +7,7 @@ let
 in
 {
   imports = [
-    ../../home/core.nix
-    ../../home/wayland.nix
-    ../../home/git.nix
-    ../../home/stylix.nix
-    ../../home/fonts.nix
-    ../../home/gtk.nix
-    ../../home/scripts.nix
-
-    # shell
-    ../../home/shell/zsh
-
-    # terminal programs
-    ../../home/terminal/ghostty
-    ../../home/terminal/yazi
-    ../../home/terminal/btop
-    ../../home/terminal/fastfetch
-
-    # wm and companions
-    ../../home/wm/hyprland
-    ../../home/wm/waybar
-    ../../home/wm/hyprlock
-    ../../home/wm/rofi
-    ../../home/wm/hypridle
-    ../../home/wm/swayosd
-    ../../home/wm/mako
-
-    # gui apps
-    ../../home/apps/discord
-    ../../home/apps/firefox
-    ../../home/apps/obsidian
-    ../../home/apps/zathura
-
-    ../../home/apps/misc.nix
+    ../../home
   ];
 
   programs.wayland = {

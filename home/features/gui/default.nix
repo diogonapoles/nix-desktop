@@ -1,8 +1,9 @@
 {
   imports = [
+    ./discord
     ./firefox
     ./obsidian
     ./zathura
-    ./discord
+    ./misc
   ];
 }
