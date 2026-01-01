@@ -1,4 +1,5 @@
-{ pkgs, config, ... }: {
+{ config, ... }:
+{
   services.xserver.videoDrivers = [ "nvidia" ];
 
   boot.kernelParams = [
@@ -31,7 +32,10 @@
     __GL_SHADER_DISK_CACHE_SIZE = "12000000000";
   };
 
-  boot.blacklistedKernelModules = ["nouveau" "nova_core"];
+  boot.blacklistedKernelModules = [
+    "nouveau"
+    "nova_core"
+  ];
 
   boot.extraModprobeConfig = ''
     options nvidia NVreg_PreserveVideoMemoryAllocations=1
@@ -48,13 +52,4 @@
   systemd.services.nvidia-suspend.enable = true;
   systemd.services.nvidia-resume.enable = true;
   systemd.services.nvidia-hibernate.enable = true;
-
-  services.sunshine.settings = {
-    upnp = true;
-
-    encoder = "nvenc";
-
-    nvenc_preset = 1;  # P1 preset (Performance)
-    nvenc_twopass = "quarter_res";  # Quarter resolution two-pass
-  };
 }

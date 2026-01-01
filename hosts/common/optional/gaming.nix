@@ -1,15 +1,16 @@
-{ 
-  pkgs, 
-  ... 
-}: {
+{
+  pkgs,
+  ...
+}:
+{
   environment.systemPackages = with pkgs; [
-    protonup-qt      # Compatibility tool installer
-    mesa-demos       # Show hardware information
-    heroic           # Native GOG, Epic, and Amazon Games Launcher for Linux, Windows and Mac
-    joystickwake     # Joystick-aware screen waker
-    mangohud         # Vulkan and OpenGL overlay for monitoring FPS, temperatures, CPU/GPU load and more
-    umu-launcher     # Unified launcher for Windows games on Linux using the Steam Linux Runtime and Tools
-    winetricks       # Script to install DLLs needed to work around problems in Wine
+    protonup-qt # Compatibility tool installer
+    mesa-demos # Show hardware information
+    heroic # Native GOG, Epic, and Amazon Games Launcher for Linux, Windows and Mac
+    joystickwake # Joystick-aware screen waker
+    mangohud # Vulkan and OpenGL overlay for monitoring FPS, temperatures, CPU/GPU load and more
+    umu-launcher # Unified launcher for Windows games on Linux using the Steam Linux Runtime and Tools
+    winetricks # Script to install DLLs needed to work around problems in Wine
   ];
 
   environment.sessionVariables = {
@@ -45,7 +46,7 @@
       gpu = {
         apply_gpu_optimisations = "accept-responsibility";
         nv_powermizer_mode = "1";
-        gpu_device = "2"; 
+        gpu_device = "2";
       };
     };
   };

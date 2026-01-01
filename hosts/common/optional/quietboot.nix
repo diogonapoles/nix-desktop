@@ -1,19 +1,5 @@
-{ pkgs, lib, ... }: {
+{
   boot = {
-    kernelPackages = lib.mkForce pkgs.cachyosKernels.linuxPackages-cachyos-latest;
-
-    loader = {
-      systemd-boot = {
-        enable = true;
-        consoleMode = "max";
-        configurationLimit = 10;
-      };
-      efi.canTouchEfiVariables = true;
-      timeout = 3;
-    };
-
-    tmp.cleanOnBoot = true;
-
     kernelParams = [
       "quiet"
       "loglevel=3"

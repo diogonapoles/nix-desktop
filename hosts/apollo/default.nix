@@ -3,7 +3,8 @@
   inputs,
   outputs,
   ...
-}: {
+}:
+{
   imports = [
     inputs.hardware.nixosModules.common-gpu-nvidia
     inputs.hardware.nixosModules.common-cpu-amd
@@ -12,31 +13,35 @@
 
     ./hardware-configuration.nix
 
-    ../common/core.nix
+    ../common/core
     ../common/users/winter.nix
 
-    ../../system/hardware/nvidia.nix
-    ../../system/hardware/bluetooth.nix
+    ../common/optional/bluetooth.nix
+    ../common/optional/coolercontrol.nix
+    ../common/optional/gaming.nix
+    ../common/optional/networking.nix
+    ../common/optional/pipewire.nix
+    ../common/optional/quietboot.nix
 
-    ../../system/services/pipewire.nix
-    ../../system/services/greetd.nix
-    ../../system/services/display-manager.nix
-    ../../system/services/home-manager.nix
-
-    ../../system/boot.nix
-    ../../system/networking.nix
-    ../../system/locale.nix
-    ../../system/containers.nix
-    ../../system/packages.nix
-    ../../system/memory.nix
-    ../../system/gaming.nix
-    # ../../system/remote-desktop.nix
-    ../../system/stylix.nix
-    ../../system/coolercontrol.nix
+    ../common/optional/drivers/nvidia-gpu.nix
   ];
 
+  networking.hostName = "apollo";
   home-manager.users.winter = ./home.nix;
 
+  nixpkgs = {
+    overlays = [
+      inputs.nix-cachyos-kernel.overlays.default
+    ];
+  };
+  boot.kernelPackages = pkgs.cachyosKernels.linuxPackages-cachyos-latest;
+
+  environment.systemPackages = with pkgs; [
+    vim
+    wget
+    neovim
+    nix-search-cli
+  ];
 
   services.hardware = {
     openrgb = {
@@ -62,10 +67,5 @@
     };
   };
 
-  security.pam.services.hyprlock = {};
-
-  powerManagement.cpuFreqGovernor = "performance";
-
-  networking.hostName = "apollo";
   system.stateVersion = "25.11";
 }

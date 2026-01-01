@@ -3,7 +3,8 @@
   config,
   outputs,
   ...
-}: {
+}:
+{
   users.users.winter = {
     isNormalUser = true;
     shell = pkgs.zsh;
@@ -13,6 +14,7 @@
       "docker"
       "git"
       "networkmanager"
+      "network"
       "video"
       "wheel"
       "gamemode"
@@ -20,4 +22,6 @@
 
     packages = [ pkgs.home-manager ];
   };
+
+  security.pam.services.hyprlock = { };
 }

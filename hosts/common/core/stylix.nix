@@ -1,11 +1,12 @@
 {
   config,
   lib,
-  pkgs,
   ...
-}: let
+}:
+let
   cfg = config.stylix-custom;
-in {
+in
+{
   options.stylix-custom = {
     enable = lib.mkEnableOption "stylix theming system";
 
@@ -15,7 +16,10 @@ in {
     };
 
     polarity = lib.mkOption {
-      type = lib.types.enum ["dark" "light"];
+      type = lib.types.enum [
+        "dark"
+        "light"
+      ];
       default = "dark";
       description = "Color scheme polarity (dark or light)";
     };

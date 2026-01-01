@@ -1,4 +1,4 @@
-{ ... }: {
+{
   networking.firewall = {
     enable = true;
     allowedTCPPorts = [
@@ -24,7 +24,7 @@
     enable = true;
     settings = {
       General = {
-        EnableNetworkConfiguration = false;  # let networkmanager handle this
+        EnableNetworkConfiguration = false; # let networkmanager handle this
       };
       Network = {
         EnableIPv6 = true;
