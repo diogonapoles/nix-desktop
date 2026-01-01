@@ -29,8 +29,6 @@
       core.editor = "nvim";
       fetch.prune = true;
       rebase.autoStash = true;
-
-      url."ssh://git@github.com/".insteadOf = "https://github.com/";
     };
   };
 
