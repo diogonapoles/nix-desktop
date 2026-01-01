@@ -1,6 +1,7 @@
 {
   imports = [
-    ./wayland-common
-    ./hyprland-core
+    ./hyprland
+    ./hypridle
+    ./hyprlock
   ];
 }
