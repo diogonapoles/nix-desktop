@@ -62,15 +62,15 @@
     gamescopeSession.enable = true;
 
     package = pkgs.steam.override {
-      extraEnv = {
-        MANGOHUD = true;
-        PROTON_ENABLE_WAYLAND = true;
-        PROTON_ENABLE_HDR = true;
-        PROTON_USE_WOW64 = true;
-        PROTON_USE_NTSYNC = true;
-        PROTON_ENABLE_NVAPI = "1";
-        PROTON_HIDE_NVIDIA_GPU = "0";
-      };
+      # extraEnv = {
+      #   MANGOHUD = true;
+      #   PROTON_ENABLE_WAYLAND = true;
+      #   PROTON_ENABLE_HDR = true;
+      #   PROTON_USE_WOW64 = true;
+      #   PROTON_USE_NTSYNC = true;
+      #   PROTON_ENABLE_NVAPI = "1";
+      #   PROTON_HIDE_NVIDIA_GPU = "0";
+      # };
 
       extraPkgs =
         pkgs: with pkgs; [

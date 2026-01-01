@@ -1,6 +1,5 @@
 {
-  config,
-  pkgs,
+  lib,
   ...
 }: {
   programs.ghostty = {
@@ -14,7 +13,7 @@
       window-padding-x = 10;
       window-padding-y = 10;
       confirm-close-surface = false;
-      background-opacity = 0.80;
+      background-opacity = lib.mkForce 0.80;
       resize-overlay = "never";
       gtk-toolbar-style = "flat";
 

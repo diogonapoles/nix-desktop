@@ -63,6 +63,7 @@ in
   config = lib.mkIf cfg.enable {
     stylix = {
       enable = true;
+      autoEnable = true;
       base16Scheme = cfg.colorscheme;
       polarity = cfg.polarity;
 
